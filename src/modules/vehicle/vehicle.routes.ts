@@ -5,7 +5,7 @@ import auth from "../../middlewere/auth";
 const router = express.Router();
 
 // POST /api/v1/vehicles  -> Admin only
-router.post("/", auth(), vehicleController.createVehicle);
+router.post("/", auth("admin"), vehicleController.createVehicle);
 
 // GET /api/v1/vehicles   -> Public
 router.get("/", vehicleController.getAllVehicles);
@@ -14,9 +14,9 @@ router.get("/", vehicleController.getAllVehicles);
 router.get("/:vehicleId", vehicleController.getVehicleById);
 
 // PUT /api/v1/vehicles/:vehicleId -> Admin only
-router.put("/:vehicleId", vehicleController.updateVehicle);
+router.put("/:vehicleId", auth("admin"), vehicleController.updateVehicle);
 
 // DELETE /api/v1/vehicles/:vehicleId -> Admin only
-router.delete("/:vehicleId", vehicleController.deleteVehicle);
+router.delete("/:vehicleId", auth("admin"), vehicleController.deleteVehicle);
 
 export const vehicleRoutes = router;

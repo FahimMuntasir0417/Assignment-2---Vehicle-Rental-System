@@ -27,7 +27,7 @@ app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/vehicles", vehicleRoutes);
 
 // bookings route
-app.use("/api/v1/booking", bookingRoutes);
+app.use("/api/v1/bookings", bookingRoutes);
 
 initDB().catch((err) => {
   console.log("DB init Failed", err);
