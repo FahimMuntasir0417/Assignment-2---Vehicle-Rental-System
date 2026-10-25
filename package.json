@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npx tsx watch ./src/server.ts",
-    "build": "tsc"
+    "dev": "node init && npx tsx watch ./src/server.ts",
+    "build": "node init && tsc"
   },
   "keywords": [],
   "author": "",
